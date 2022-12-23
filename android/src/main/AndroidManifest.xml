@@ -1,3 +1,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.content.provider">
+
+    <permission android:name="com.content.provider.READ_PERMISSION" android:protectionLevel="normal" />
+    <permission android:name="com.content.provider.WRITE_PERMISSION" android:protectionLevel="normal" />
+
+    <application>
+      <provider
+        android:authorities="com.content.provider.DataProvider"
+        android:name="com.content.provider.DataProvider"
+        android:readPermission="com.content.provider.READ_PERMISSION"
+        android:writePermission="com.content.provider.WRITE_PERMISSION"
+        android:exported="true"
+        android:enabled="true"
+        android:grantUriPermissions="true"
+      />
+    </application>
 </manifest>
