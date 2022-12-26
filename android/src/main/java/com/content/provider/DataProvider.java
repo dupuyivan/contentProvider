@@ -21,9 +21,9 @@ import java.sql.RowId;
 import java.util.HashMap;
 
 public class DataProvider extends ContentProvider {
-  public static final String PROVIDER_NAME = "com.content.provider.DataProvider";
+  public static final String AUTHORITY  = "com.content.provider.DataProvider";
   static final String RESOURCE = "users";
-  static final String URL = "content://" + PROVIDER_NAME + "/" + RESOURCE;
+  static final String URL = "content://" + AUTHORITY  + "/" + RESOURCE;
   public static final Uri CONTENT_URI = Uri.parse( URL );
 
   static final int uriCode = 1;
@@ -32,8 +32,8 @@ public class DataProvider extends ContentProvider {
 
   static {
     uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
-    uriMatcher.addURI( PROVIDER_NAME, RESOURCE, uriCode);
-    uriMatcher.addURI(PROVIDER_NAME, RESOURCE + "/*", uriCode);
+    uriMatcher.addURI( AUTHORITY , RESOURCE, uriCode);
+    uriMatcher.addURI(AUTHORITY , RESOURCE + "/*", uriCode);
   }
 
   private SQLiteDatabase db;

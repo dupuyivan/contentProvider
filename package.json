@@ -76,5 +76,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/dupuyivan"
   }
 }
